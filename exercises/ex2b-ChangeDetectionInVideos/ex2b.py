@@ -14,22 +14,21 @@ while True:
         print('Error reading frame')
         break
 
-    grayImg = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    grayImage = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
     # Convert the image to float
-    grayImgAsFloat = grayImg.astype(np.float32)
+    grayImgAsFloat = grayImage.astype(np.float32)
 
     # conert image to uint8
-    grayImgUint8 = grayImgAsFloat.astype(np.uint8)
+    grayImageUint8 = grayImgAsFloat.astype(np.uint8)
 
     stop = time.time()
-
     fps = 1/(stop-start)
-    cv2.putText(grayImgUint8, f'FPS: {fps:.2f}', (10, 30),
+    cv2.putText(grayImageUint8, f'FPS: {fps:.2f}', (10, 30),
                 cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
 
     # Display the frame
-    cv2.imshow('Frame', grayImgUint8)
+    cv2.imshow('Frame', grayImageUint8)
 
     # Wait for 1 millisecond for a key event
     if cv2.waitKey(1) & 0xFF == ord('q'):
