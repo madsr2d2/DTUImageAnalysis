@@ -1,5 +1,3 @@
-from re import T
-from weakref import ref
 import cv2
 import numpy as np
 import time
